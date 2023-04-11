@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sehri - Iftari Timer || Ramadan special</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card {
+            width: 35%;
+            margin: 50px auto;
+            text-align: center;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .heading {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+        }
+
+        .main {
+            font-weight: normal;
+            line-height: 40px;
+        }
+        .btn button{
+            width: 70%;
+            background-color: white;
+            color: black;
+            font-weight: bolder;
+            padding: 10px;
+            border-radius: 20px;
+            transition: all 1s ease;
+        }
+        .btn button:hover{
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+            border-radius: 0;
+        }
+
+        #roza,
+        #iftariTimer,
+        #sehriTime {
+            font-weight: bolder;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 370px) {
+            .card {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="heading">
+            <h1>Sehri Iftari Timer</h1>
+        </div>
+        <div class="main">
+            <h2>
+                On <span id="roza"></span>Ramadan <br />Sehri is on <span id="sehriTime"></span> <br />&<br /> Iftari Is
+                at <span id="iftariTimer"></span>
+            </h2>
+        </div>
+        <div class="btn">
+            <button onclick="refresh()">View More ..</button>
+        </div>
+    </div>
+    <script>
+        var Iftari = ["6:45", "6:45", "6:45", "6:46", "6:46", "6:47", "6:47", "6:48", "6:48", "6:48", "6:49", "6:49", "6:50", "6:50", "6:51", "6:51", "6:51", "6:52", "6:52", "6:53", "6:53", "6:54", "6:54", "6:55", "6:55", "6:55", "6:56", "6:56", "6:57", "6:57"]
+        var Sehri = ["5:17", "5:16", "5:15", "5:14", "5:13", "5:11", "5:10", "5:09", "5:08", "5:07", "5:06", "5:05", "5:04", "5:02", "5:01", "5:00", "4:59", "4:58", "4:57", "4:56", "4:55", "4:54", "4:52", "4:51", "4:50", "4:49", "4:48", "4:47", "4:47", "4:45"]
+        console.log(Iftari.length);
+        console.log(Sehri.length);
+        var roza = prompt("Which Ramadan is Today")
+        var iT = Iftari[roza - 1]
+        var sT = Sehri[roza - 1]
+        if (iT == undefined && sT == undefined) {
+            iT = "00:00"
+            sT = "00:00"
+        }
+        document.getElementById("roza").innerHTML = roza + " "
+        document.getElementById("sehriTime").innerHTML = sT + " "
+        document.getElementById("iftariTimer").innerHTML = iT + " "
+        function refresh() {
+            location.reload()
+        }
+    </script>
+</body>
+
+</html>
