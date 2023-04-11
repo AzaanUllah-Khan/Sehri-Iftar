@@ -17,6 +17,7 @@
             text-align: center;
             border: 2px solid black;
             padding: 10px;
+            background-color: rgb(248, 252, 255);
         }
 
         .heading {
@@ -49,6 +50,8 @@
         #iftariTimer,
         #sehriTime {
             font-weight: bolder;
+            background-color: rgba(255, 255, 0, 0.3);
+            padding: 5px;
         }
 
         @media screen and (max-width: 600px) {
@@ -72,7 +75,7 @@
         </div>
         <div class="main">
             <h2>
-                On <span id="roza"></span>Ramadan <br />Sehri is on <span id="sehriTime"></span> <br />&<br /> Iftari Is
+                On <span id="roza"></span> Ramadan <br />Sehri is on <span id="sehriTime"></span> <br />&<br /> Iftari Is
                 at <span id="iftariTimer"></span>
             </h2>
         </div>
@@ -92,7 +95,7 @@
             iT = "00:00"
             sT = "00:00"
         }
-        document.getElementById("roza").innerHTML = roza + " "
+        document.getElementById("roza").innerHTML = roza
         document.getElementById("sehriTime").innerHTML = sT + " "
         document.getElementById("iftariTimer").innerHTML = iT + " "
         function refresh() {
